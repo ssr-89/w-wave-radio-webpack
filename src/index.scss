@@ -1,0 +1,17 @@
+@import "./scss/fonts"; /* шрифты */
+@import "./scss/vars"; /* переменные */
+// @import "mixins"; /* миксины */
+@import "./scss/vendors"; /* в vendor прописывается @import "./vendors/normalize.css" или "./vendors/swiper-min.css" */
+@import "./scss/settings"; /* сбросы и общие настройки */
+
+@import "./scss/components/header";
+@import "./scss/components/hero";
+@import "./scss/components/podcasts";
+@import "./scss/components/transfers";
+@import "./scss/components/guests";
+@import "./scss/components/playlists";
+@import "./scss/components/ad";
+@import "./scss/components/about";
+
+@import "./scss/components/footer";
+@import "./scss/components/media";

@@ -1,0 +1,165 @@
+/* ABOUT */
+.about {
+  background-color: var(--space);
+  color: var(--main-color);
+  &__container {
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    gap: var(--gap);
+  }
+  &-intro {
+    gap: var(--gap);
+    &__content {
+      width: 56.11%;
+    }
+    &__title {
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: clamp(1.5rem, 0.907rem + 2.96vw, 3rem);
+    }
+    &__text {
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: clamp(0.875rem, 0.727rem + 0.74vw, 1.25rem);
+      line-height: 1.6;
+    }
+    &__descr {
+      font-size: clamp(0.875rem, 0.727rem + 0.74vw, 1.25rem);
+      line-height: 1.6;
+    }
+    &__images {
+      gap: var(--gap);
+    }
+  }
+  &-list {
+    --about-elements: 4;
+    gap: var(--gap);
+    flex-flow: row wrap;
+    &__item {
+      flex-flow: column nowrap;
+      align-items: flex-start;
+      width: calc((100% - (var(--about-elements) - 1) * var(--gap)) / (var(--about-elements)));
+    }
+    &__photo {
+      margin-bottom: var(--gap);
+      width: 100%;
+    }
+    &__name {
+      margin-bottom: 10px;
+      font-weight: 500;
+      font-size: clamp(0.875rem, 0.727rem + 0.74vw, 1.25rem);
+    }
+    &__descr {
+      font-size: clamp(0.75rem, 0.651rem + 0.49vw, 1rem);
+      line-height: clamp(1rem, 0.802rem + 0.99vw, 1.5rem);
+    }
+  }
+  &__wrapper {
+    width: 100%;
+  }
+  &-form {
+    &__text {
+      margin-bottom: var(--gap);
+      padding: 30px;
+      max-width: 920px;
+      width: 100%;
+      min-height: 150px;
+      border: 1px solid var(--main-color);
+      border-radius: 30px;
+      font-size: clamp(1rem, 0.901rem + 0.49vw, 1.25rem);
+      color: var(--main-color);
+      &::placeholder {
+        font-size: clamp(1rem, 0.901rem + 0.49vw, 1.25rem);
+      }
+      &:focus {
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+    &__input {
+      margin-bottom: var(--gap);
+      padding: 30px;
+      max-width: 445px;
+      width: 100%;
+      border: 1px solid var(--main-color);
+      border-radius: 40px;
+      font-size: clamp(1rem, 0.901rem + 0.49vw, 1.25rem);
+      color: var(--main-color);
+      &:nth-of-type(1) {
+        margin-right: var(--gap);
+      }
+      &::placeholder {
+        font-size: clamp(1rem, 0.901rem + 0.49vw, 1.25rem);
+      }
+      &:focus {
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+    &__btn {
+      margin-bottom: var(--gap);
+      padding: 25px 54px;
+      max-width: 212px;
+      width: 100%;
+      background-color: var(--violet);
+      border: 2px solid var(--violet);
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: clamp(0.875rem, 0.727rem + 0.74vw, 1.25rem);
+      transition: 0.3s ease-in-out;
+      &:focus {
+        &:not(:hover):not(:active) {
+          background-color: var(--space);
+          color: var(--violet);
+        }
+      }
+      &:hover {
+        background-color: var(--light-violet);
+        border-color: var(--light-violet);
+      }
+      &:active {
+        background-color: var(--dark-violet);
+        border-color: var(--dark-violet);
+      }
+    }
+    &__label {
+      display: block;
+      cursor: pointer;
+    }
+    &__checkbox {
+      position: relative;
+      margin-right: 8px;
+      width: 14px;
+      height: 14px;
+      border: 1px solid var(--main-color);
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url(assets/about-check.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+      }
+      &:checked {
+        &::before {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+      &-text {
+        font-weight: 500;
+        font-size: clamp(0.563rem, 0.488rem + 0.37vw, 0.75rem);
+      }
+    }
+  }
+}

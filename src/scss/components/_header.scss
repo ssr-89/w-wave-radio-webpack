@@ -1,0 +1,239 @@
+/* HEADER */
+.header {
+  background-color: var(--light-gray);
+  &__container {
+    position: relative;
+    justify-content: space-between;
+    padding: var(--gap);
+    width: 100%;
+    min-height: 58px;
+  }
+  &__logo {
+    svg {
+      width: clamp(7rem, 5.815rem + 5.93vw, 10rem);
+      height: clamp(0.875rem, 0.727rem + 0.74vw, 1.25rem);
+    }
+  }
+  &__nav {
+    &.menu-open {
+      display: flex;
+      margin-top: 0;
+    }
+  }
+  &-menu {
+    gap: 50.75px;
+    &__link {
+      position: relative;
+      padding: 6px 4px 2px;
+      transition: 0.3s ease-in-out;
+      &-text {
+        font-size: 20px;
+        color: var(--space);
+        transition: 0.3s ease-in-out;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        left: 4px;
+        bottom: 0;
+        width: calc(100% - 8px);
+        height: 2px;
+        background-color: var(--violet);
+        transform: scale(0);
+        transition: 0.3s ease-in-out;
+      }
+      &:focus:not(:hover):not(:active) {
+        background-color: var(--light-violet);
+        .header-menu__link-text {
+          color: var(--light-gray);
+        }
+      }
+      &:hover:not(:active) {
+        .header-menu__link-text {
+          color: var(--violet);
+        }
+        &::after {
+          transform: scale(1);
+        }
+      }
+      &:active {
+        .header-menu__link-text {
+          color: var(--dark-violet);
+        }
+      }
+    }
+  }
+  &__wrap {
+    .search {
+      display: flex;
+      &-form {
+        display: none;
+        &.stretch {
+          display: flex;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 1002;
+          padding: 10px;
+          background-color: var(--light-gray);
+        }
+        &__input {
+          margin-right: 10px;
+          width: 93%;
+          border-bottom: 1px solid var(--second-color);
+          transition: 0.3s ease-in-out;
+          &:focus {
+            border-color: var(--light-violet);
+            &::placeholder {
+              color: transparent;
+            }
+          }
+        }
+        &__submit {
+          margin-right: 10px;
+          transition: 0.3s ease-in-out;
+          &:focus:not(:hover):not(:active) {
+            background-color: var(--light-violet);
+            color: var(--main-color);
+          }
+          &:hover {
+            color: var(--light-violet);
+          }
+          &:active {
+            color: var(--dark-violet);
+          }
+        }
+        &__close {
+          position: relative;
+          width: 28px; /* Ширина контейнера */
+          height: 28px; /* Высота контейнера */
+          transition: 0.3s ease-in-out;
+          &:focus:not(:hover):not(:active) {
+            background-color: var(--light-violet);
+            &::before,
+            &::after {
+              background-color: var(--main-color);
+            }
+          }
+          &:hover {
+            &::before,
+            &::after {
+              background-color: var(--light-violet);
+            }
+          }
+          &:active {
+            &::before,
+            &::after {
+              background-color: var(--dark-violet);
+            }
+          }
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: var(--second-color);
+            transition: 0.3s ease-in-out;
+          }
+
+          &::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+          }
+
+          &::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+          }
+        }
+      }
+      &__open {
+        margin-right: 10px;
+        color: var(--dark-violet);
+        transition: 0.3s ease-in-out;
+        &:focus:not(:hover):not(:active) {
+          background-color: var(--light-violet);
+          color: var(--main-color);
+        }
+        &:hover {
+          color: var(--violet);
+        }
+      }
+    }
+    .burger {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      &__line {
+        position: relative;
+        width: 100%;
+        height: 3px;
+        background-color: var(--violet);
+        border-radius: 4px;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: var(--violet);
+          transition-duration: 0.3s, 0.3s; /*замедление*/
+          transition-delay: 0.3s, 0s; /*задержка замедления*/
+        }
+        &::before {
+          top: -9px;
+          transition-property: top, transform;
+        }
+        &::after {
+          bottom: -9px;
+          transition-property: bottom, transform;
+        }
+      }
+      &.burger-open {
+        .burger__line {
+          background: none;
+          &::before,
+          &::after {
+            transition-delay: 0s, 0.3s;
+            background-color: var(--main-color);
+          }
+          &::before {
+            top: 0;
+            transform: rotate(-45deg);
+          }
+          &::after {
+            bottom: 0;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__second-nav {
+    display: none;
+    .second-menu {
+      flex: 1 1 1130px;
+      justify-content: space-between;
+      padding: 22px 100px;
+      border: 1px solid var(--light-gray);
+      &__item {
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+      }
+      &__link {
+        &-text {
+          font-size: clamp(1rem, 0.886rem + 0.57vw, 1.25rem);
+          color: var(--space);
+        }
+      }
+    }
+  }
+}

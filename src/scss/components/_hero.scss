@@ -1,0 +1,44 @@
+/* HERO */
+.hero {
+  &__container {
+    gap: 121px;
+  }
+  &__title {
+    margin-bottom: 14px;
+    font-size: clamp(2rem, 1.309rem + 3.46vw, 3.75rem);
+    color: var(--space);
+    &-text {
+      font-weight: normal;
+    }
+  }
+  &__descr {
+    margin-bottom: 45px;
+    font-size: clamp(0.875rem, 0.826rem + 0.25vw, 1rem);
+    line-height: 150%;
+    color: var(--space);
+  }
+  &__btn {
+    padding: 23px 52px;
+    background-color: var(--violet);
+    border: 2px solid var(--violet);
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: clamp(1rem, 0.901rem + 0.49vw, 1.25rem);
+    color: var(--main-color);
+    transition: 0.3s ease-in-out;
+    &:focus {
+      background-color: var(--light-violet);
+      color: var(--main-color);
+    }
+    &:hover {
+      background-color: var(--main-color);
+      border: 2px solid var(--violet);
+      color: var(--violet);
+    }
+    &:active {
+      background-color: var(--dark-violet);
+      border-color: var(--dark-violet);
+      color: var(--main-color);
+    }
+  }
+}

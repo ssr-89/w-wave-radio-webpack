@@ -1,0 +1,26 @@
+@function vw($value, $base: 1440) {
+  @return $value / $base * 100vw;
+}
+
+@function vmin($value, $base: 320) {
+  @return $value / $base * 100vmin;
+}
+
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src:
+      url("./fonts/#{$url}.woff2") format("woff2"),
+      url("./fonts/#{$url}.woff") format("woff");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+@include font-face("Muller Italic", "Muller-Trial-LightItalic", 200);
+@include font-face("Muller", "Muller-Trial-Regular", 400);
+@include font-face("Muller Italic", "Muller-Trial-RegularItalic", 400);
+@include font-face("Open Sans", "OpenSans-Regular", 400);
+@include font-face("Muller", "Muller-Trial-Medium", 500);
+@include font-face("Muller", "Muller-Trial-Bold", 700);

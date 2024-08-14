@@ -1,0 +1,180 @@
+/* PODCASTS */
+.podcasts {
+  background-color: var(--light-gray);
+  &__container {
+    flex-flow: column nowrap;
+    align-items: start;
+    gap: var(--gap);
+  }
+  &__title {
+    font-weight: 400;
+    font-size: clamp(1.5rem, 0.907rem + 2.96vw, 3rem);
+  }
+  &-cards {
+    --elements: 2;
+    flex-flow: row wrap;
+    gap: var(--gap);
+    &__item {
+      width: calc((100% - (var(--elements) - 1) * var(--gap)) / (var(--elements)));
+      &:first-child {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (1).png");
+        }
+      }
+      &:nth-child(2) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (2).png");
+        }
+      }
+      &:nth-child(3) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (3).png");
+        }
+      }
+      &:nth-child(4) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (4).png");
+        }
+      }
+      &:nth-child(5) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (5).png");
+        }
+      }
+      &:nth-child(6) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (6).png");
+        }
+      }
+      &:nth-child(7) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (7).png");
+        }
+      }
+      &:nth-child(8) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(9) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(10) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(11) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(12) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(13) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(14) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(15) {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:last-child {
+        .podcasts-cards__img {
+          background-image: url("./assets/podcasts (8).png");
+        }
+      }
+      &:nth-child(n + 9) {
+        display: none;
+      }
+      &.card-visible {
+        display: inline-block;
+      }
+    }
+    &__card {
+      flex: 0 1 100%;
+      justify-content: start;
+      background-color: var(--main-color);
+      transition: 0.3s ease-in-out;
+      &:hover {
+        box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+      }
+    }
+    &__img {
+      position: relative;
+      flex: 0 1 112px;
+      min-height: 140px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      &-date {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 51px;
+        width: 100%;
+        min-height: 16px;
+        background-color: var(--light-gray);
+        font-size: 10px;
+      }
+    }
+    &__content {
+      flex-flow: column nowrap;
+      align-items: start;
+      padding: 40px var(--gap);
+    }
+    &__heading {
+      margin-bottom: 4px;
+      font-weight: 400;
+      font-size: clamp(1rem, 0.901rem + 0.49vw, 1.25rem);
+    }
+    &__time {
+      order: -1;
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+    &__author {
+      font-size: clamp(0.75rem, 0.651rem + 0.49vw, 1rem);
+      color: var(--dark-gray);
+    }
+  }
+  &__btn {
+    margin: 0 auto;
+    padding: 23px 52px;
+    border: 2px solid var(--violet);
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: clamp(1rem, 0.901rem + 0.49vw, 1.25rem);
+    color: var(--violet);
+    transition: 0.3s ease-in-out;
+    &:focus {
+      background-color: var(--light-violet);
+      color: var(--main-color);
+    }
+    &:hover {
+      background-color: var(--violet);
+      border-color: var(--violet);
+      color: var(--main-color);
+    }
+    &:active {
+      background-color: var(--dark-violet);
+      border-color: var(--dark-violet);
+      color: var(--main-color);
+    }
+  }
+}

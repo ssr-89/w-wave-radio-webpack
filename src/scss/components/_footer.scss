@@ -1,0 +1,73 @@
+/* FOOTER */
+.footer {
+  background-color: var(--light-space);
+  color: var(--main-color);
+  &__container {
+    justify-content: space-between;
+  }
+  &__header {
+    flex-flow: column nowrap;
+    gap: 20px;
+  }
+  &-social {
+    gap: 25px;
+    &__link {
+      color: var(--dark-gray);
+      transition: 0.3s ease-in-out;
+      &:focus:not(:hover):not(:active) {
+        color: var(--main-color);
+      }
+      &:hover {
+        color: var(--light-violet);
+      }
+      &:active {
+        color: var(--violet);
+      }
+    }
+  }
+  &-menu {
+    column-count: 3; /* Задаем количество колонок */
+    column-gap: 100px; /* Задаем расстояние между колонками */
+    min-height: 88px;
+    &__item {
+      break-inside: avoid; /* Избегаем разрыва элементов внутри колонки */
+      &:not(:nth-child(3n)) {
+        margin-bottom: 20px; /* Добавим небольшой отступ между элементами */
+      }
+    }
+    &__link {
+      &-text {
+        font-size: clamp(0.75rem, 0.651rem + 0.49vw, 1rem);
+        transition: 0.3s ease-in-out;
+      }
+      &:focus:not(:hover):not(:active) {
+        span {
+          color: var(--dark-gray);
+        }
+      }
+      &:hover {
+        span {
+          color: var(--light-violet);
+        }
+      }
+      &:active {
+        span {
+          color: var(--violet);
+        }
+      }
+    }
+  }
+  &__helix {
+    display: block;
+    min-height: 10px;
+    background-image: url("./assets/footer-helix.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__text {
+    margin: 10px;
+    text-align: center;
+    color: var(--dark-gray);
+  }
+}

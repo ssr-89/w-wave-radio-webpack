@@ -1,0 +1,116 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  line-height: 1;
+  outline: none;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-color);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Muller", Arial, sans-serif; // "Exo 2",
+  color: var(--second-color);
+  overflow-x: hidden;
+  user-select: none;
+}
+body.lock {
+  overflow: hidden;
+}
+/*==================================================*/
+/* прижатие футера к низу */
+html,
+body {
+  height: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100%;
+}
+.main {
+  flex: 1 1 auto;
+}
+/*==================================================*/
+hr {
+  margin: 0;
+  padding: 0;
+}
+.btn {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  font-size: 100%;
+  color: inherit;
+  cursor: pointer;
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.img {
+  /* display: block; */
+  vertical-align: top;
+  max-width: 100%;
+}
+.input {
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  background: transparent;
+  border: none;
+  resize: none;
+}
+.link {
+  text-decoration: none;
+  font-size: 100%;
+  color: inherit;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.table {
+  border-collapse: collapse;
+}
+.title,
+.text {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+.pre {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: 1;
+}
+[class*="__container"] {
+  margin: 0 auto;
+  padding: 90px 50px;
+  max-width: 1130px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--second-color);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
